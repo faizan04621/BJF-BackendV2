@@ -1,0 +1,9 @@
+alembic/versions/*
+Pipfile.lock
+env
+**/__pycache__/
+.idea/
+.env
+logs
+downloads
+.vscode
