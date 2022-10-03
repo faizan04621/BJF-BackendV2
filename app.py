@@ -56,7 +56,7 @@ def create_a_user():
     otp_details = sendOTP(new_user.cc + new_user.mobile)
     #print('OTP'+otp_details)
     otp_request = {
-      'userId': new_user.pid,
+      'userId': new_user.id,
       'cc': new_user.cc,
       'mobile': new_user.mobile,
       'otp': otp_details['OTP']
@@ -188,6 +188,30 @@ def verifyOtp():
   }
   user.update(otpReq)
   return jsonify({'status': True, 'message': 'User Verified Successfully'}), 200
+
+@app.route('/benefits', methods=['GET'])
+def get_benefits():
+    sales = [
+        "Earn more for every sales & referrals",
+        "Lifetime membership",
+        "1 Lakh Accidental Insurance",
+        "Access to 100+ properties",
+        "Highlight your photo & firm",
+        "Premium website for your firm"
+        ]
+    royalty = [
+        "Earn more for every sales & referrals",
+        "Lifetime membership",
+        "1 Lakh Accidental Insurance",
+        "Access to 100+ properties",
+        "Highlight your photo & firm",
+        "Premium website for your firm"
+        ]
+    content = {
+            'sales_executive': sales,
+            'royalty_member': royalty
+        }
+    return jsonify(content), 200
 
 
 @app.route('/token', methods=['POST'])
