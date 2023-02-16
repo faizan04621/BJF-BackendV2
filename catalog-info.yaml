@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: BJF-BackendV2
+  annotations:
+    github.com/project-slug: faizan04621/BJF-BackendV2
+spec:
+  type: other
+  lifecycle: unknown
+  owner: backstage
